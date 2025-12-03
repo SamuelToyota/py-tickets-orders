@@ -1,9 +1,14 @@
-from rest_framework.routers import DefaultRouter
-from .views import OrderViewSet, MovieViewSet, MovieSessionViewSet
+from django.urls import path
+from .views import (
+    MovieListView,
+    MovieSessionListView,
+    MovieSessionDetailView,
+    OrderListCreateView,
+)
 
-router = DefaultRouter()
-router.register(r"orders", OrderViewSet, basename="orders")
-router.register(r"movies", MovieViewSet, basename="movies")
-router.register(r"movie_sessions", MovieSessionViewSet, basename="movie_sessions")
-
-urlpatterns = router.urls
+urlpatterns = [
+    path("movies/", MovieListView.as_view()),
+    path("movie_sessions/", MovieSessionListView.as_view()),
+    path("movie_sessions/<int:pk>/", MovieSessionDetailView.as_view()),
+    path("orders/", OrderListCreateView.as_view()),
+]
