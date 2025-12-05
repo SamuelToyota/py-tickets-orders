@@ -47,9 +47,9 @@ MIDDLEWARE = [
 # URLS & WSGI
 # -----------------------------------------------------------------------------
 
-ROOT_URLCONF = "project.urls"  # troque "project" pelo nome do seu projeto
+ROOT_URLCONF = "cinema_service.urls"
 
-WSGI_APPLICATION = "project.wsgi.application"
+WSGI_APPLICATION = "cinema_service.wsgi.application"
 
 # -----------------------------------------------------------------------------
 # DATABASE (SQLite para desenvolvimento)
